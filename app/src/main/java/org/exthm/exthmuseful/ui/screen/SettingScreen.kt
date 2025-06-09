@@ -36,6 +36,7 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
 
     var isurlSuggestion by remember { mutableStateOf(sharedPref.getBoolean("url_suggestion", false)) }
     var isurlShareSuggestion by remember { mutableStateOf(sharedPref.getBoolean("url_share_suggestion", false)) }
+    var isDeliverySuggestion by remember { mutableStateOf(sharedPref.getBoolean("delivery_suggestion", false)) }
 
 
     Scaffold(
@@ -69,6 +70,11 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
             )
             Text(
                 text = stringResource(R.string.main_hint),
+                fontSize = 14.sp,
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+            )
+            Text(
+                text = stringResource(R.string.main_ps),
                 fontSize = 14.sp,
                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
             )
@@ -138,6 +144,21 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
                     val newCheckedState = !isurlShareSuggestion
                     isurlShareSuggestion = newCheckedState
                     sharedPref.edit().putBoolean("url_share_suggestion", newCheckedState).apply()
+                }
+            )
+
+            SettingItem(
+                title = stringResource(R.string.switch_delivery_title),
+                description = stringResource(R.string.switch_delivery_desc),
+                isChecked = isDeliverySuggestion,
+                onCheckedChange = { newState ->
+                    isDeliverySuggestion = newState
+                    sharedPref.edit().putBoolean("delivery_suggestion", newState).apply()
+                },
+                onClick = {
+                    val newCheckedState = !isDeliverySuggestion
+                    isDeliverySuggestion = newCheckedState
+                    sharedPref.edit().putBoolean("delivery_suggestion", newCheckedState).apply()
                 }
             )
         }

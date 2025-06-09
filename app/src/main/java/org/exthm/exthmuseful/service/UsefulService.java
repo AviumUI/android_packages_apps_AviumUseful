@@ -22,6 +22,7 @@ import org.exthm.exthmuseful.service.music.MusicSuggestionService;
 import org.exthm.exthmuseful.service.screen.ScreenUsefulService;
 import org.exthm.exthmuseful.service.torch.TorchService;
 import org.exthm.exthmuseful.service.url.ClipboardService;
+import org.exthm.exthmuseful.service.delivery.DeliveryService;
 
 public class UsefulService extends Service {
     private static final String TAG = "UsefulService";
@@ -76,7 +77,8 @@ public class UsefulService extends Service {
             if ("screen_always_on".equals(key) ||
                 "torch_suggestion".equals(key)||
                 "music_suggestion".equals(key) ||
-                "url_suggestion".equals(key)
+                "url_suggestion".equals(key)||
+                "delivery_suggestion".equals(key)
             ) {
                 new Handler(Looper.getMainLooper()).post(this::checkAndStartSubServices);
             }
@@ -146,6 +148,19 @@ public class UsefulService extends Service {
             if (isServiceRunning(ClipboardService.class)) {
                 stopService(new Intent(this, ClipboardService.class));
                 Log.d(TAG, "停止URL建议服务");
+            }
+        }
+
+        boolean isDeliverySuggestion = sharedPref.getBoolean("delivery_suggestion", false);
+        if (isDeliverySuggestion) {
+            if (!isServiceRunning(DeliveryService.class)) {
+                startService(new Intent(this, DeliveryService.class));
+                Log.d(TAG, "启动快递建议服务");
+            }
+        } else {
+            if (isServiceRunning(DeliveryService.class)) {
+                stopService(new Intent(this, DeliveryService.class));
+                Log.d(TAG, "停止快递建议服务");
             }
         }
 

@@ -20,4 +20,7 @@
     <string name="default_music_app">org.lineageos.twelve</string>
     <string name="useful_summary">便利功能建议</string>
     <string name="useful_title">便利功能</string>
+    <string name="switch_delivery_title">快递建议</string>
+    <string name="switch_delivery_desc">当复制快递单号时，建议跳转到查询界面(支持顺丰，中通，圆通，极兔)</string>
+    <string name="main_ps">我们不会上传您的任何数据，所有匹配均在本地处理</string>
 </resources>

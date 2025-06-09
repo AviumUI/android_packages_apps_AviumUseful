@@ -113,6 +113,13 @@
             android:enabled="true"
             android:exported="false"
             tools:ignore="Instantiatable" />
+
+        <service
+            android:name=".service.delivery.DeliveryService"
+            android:foregroundServiceType="dataSync"
+            android:enabled="true"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
     </application>
 
 </manifest>
