@@ -117,7 +117,7 @@ public class FloatingIconManager {
                 PixelFormat.TRANSLUCENT
         );
 
-        floatingViewParams.gravity = Gravity.BOTTOM | Gravity.START;
+        floatingViewParams.gravity = Gravity.BOTTOM | Gravity.END;
         floatingViewParams.x = dpToPx(20);
         floatingViewParams.y = dpToPx(15);
     }
