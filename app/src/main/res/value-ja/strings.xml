@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">便利機能サジェスト</string>
+    
+    <string name="title_name">便利機能</string>
+    <string name="switch_screen_always_on_title">画面常時点灯（一時的）</string>
+    <string name="switch_screen_always_on_desc">暗くなった画面をタップすると、手動でオフにするまで画面を点灯したままにします</string>
+    <string name="switch_torch_suggestion_title">懐中電灯サジェスト</string>
+    <string name="switch_torch_suggestion_desc">懐中電灯のオン後にオフにするよう提案します</string>
+    <string name="switch_music_suggestion_title">音楽アプリ提案</string>
+    <string name="switch_music_suggestion_desc">イヤホン接続時に音楽アプリを開くよう提案します</string>
+    <string name="switch_url_suggestion_title">リンク対応アプリ起動</string>
+    <string name="switch_url_suggestion_desc">リンクをコピー時、対応アプリを起動するよう提案します（淘宝、百度网盤、123雲盤対応）※オフライン機能</string>
+    <string name="switch_url_share_title">URLクイック起動</string>
+    <string name="switch_url_share_desc">リンクをコピー時、対応アプリがない場合はブラウザで開くよう提案します</string>
+    <string name="main_hint">フロートアイコンを左へスワイプでサジェストをキャンセル</string>
+    <string name="dialog_select_music_app_title">音楽アプリ選択</string>
+    <string name="dialog_no_apps_found">起動可能なアプリが見つかりません</string>
+    <string name="desc_selected_app">選択済み</string>
+    <string name="switch_music_suggestion_desc_placeholder">イヤホン接続時に音楽アプリを開くよう提案します（タップでアプリを選択）</string>
+    <string name="default_music_app">org.lineageos.twelve</string>
+    <string name="useful_summary">便利機能サジェスト</string>
+    <string name="useful_title">便利機能</string>
+    <string name="switch_delivery_title">配送状況サジェスト</string>
+    <string name="switch_delivery_desc">配送追跡番号をコピー時、追跡ページへ遷移するよう提案します（順豊、中通、円通、J&T対応）</string>
+    <string name="main_ps">お客様のデータは一切アップロードされません。全ての処理は端末内で完結します</string>
+</resources>
