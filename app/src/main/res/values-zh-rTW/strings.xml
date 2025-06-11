@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">便利建議</string>
+    
+    <string name="title_name">便利功能</string>
+    <string name="switch_screen_always_on_title">臨時螢幕常亮</string>
+    <string name="switch_screen_always_on_desc">點擊微亮螢幕時，保持螢幕持續亮起直至手動關閉</string>
+    <string name="switch_torch_suggestion_title">手電筒建議</string>
+    <string name="switch_torch_suggestion_desc">手電筒開啟後，建議將其關閉</string>
+    <string name="switch_music_suggestion_title">音樂應用程式建議</string>
+    <string name="switch_music_suggestion_desc">連接耳機時，建議開啟音樂應用程式</string>
+    <string name="switch_url_suggestion_title">開啟連結應用程式</string>
+    <string name="switch_url_suggestion_desc">複製連結時，建議開啟對應應用程式（支援淘寶、百度網盤、123雲端）</string>
+    <string name="switch_url_share_title">快速開啟網址</string>
+    <string name="switch_url_share_desc">複製連結時，若無匹配應用程式，建議使用瀏覽器開啟</string>
+    <string name="main_hint">向左滑動浮動圖示可取消本次建議</string>
+    <string name="dialog_select_music_app_title">選擇音樂應用程式</string>
+    <string name="dialog_no_apps_found">未找到可啟動的應用程式</string>
+    <string name="desc_selected_app">已選擇</string>
+    <string name="switch_music_suggestion_desc_placeholder">連接耳機時，建議開啟音樂應用程式，點擊選擇應用程式</string>
+    <string name="default_music_app">org.lineageos.twelve</string>
+    <string name="useful_summary">提供贴心的小功能建议</string>
+    <string name="useful_title">便利功能</string>
+    <string name="switch_delivery_title">快遞建議</string>
+    <string name="switch_delivery_desc">當複製快遞單號時，建議跳轉至查詢頁面（支援順豐、中通、圓通、極兔）</string>
+    <string name="main_ps">我們不會上傳您的任何數據，所有匹配均在本地端處理</string>
+</resources>
