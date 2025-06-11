@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Moon Suggestions</string>
+    
+    <string name="title_name">Moon Features</string>
+    <string name="switch_screen_always_on_title">Temporary Screen Always-On</string>
+    <string name="switch_screen_always_on_desc">Keep screen on until manually turned off when tapping dimmed screen</string>
+    <string name="switch_torch_suggestion_title">Flashlight Suggestion</string>
+    <string name="switch_torch_suggestion_desc">Suggest turning off flashlight after activation</string>
+    <string name="switch_music_suggestion_title">Music App Suggestion</string>
+    <string name="switch_music_suggestion_desc">Suggest opening music app when headphones are connected</string>
+    <string name="switch_url_suggestion_title">Open Link in App</string>
+    <string name="switch_url_suggestion_desc">Suggest opening corresponding app when copying links (Supports Taobao, Baidu Netdisk, 123 Cloud) Note: Offline function</string>
+    <string name="switch_url_share_title">Quick URL Opening</string>
+    <string name="switch_url_share_desc">Suggest opening in browser if no matching app found for copied link</string>
+    <string name="main_hint">Swipe floating icon left to cancel suggestion</string>
+    <string name="dialog_select_music_app_title">Select Music App</string>
+    <string name="dialog_no_apps_found">No launchable apps found</string>
+    <string name="desc_selected_app">Selected</string>
+    <string name="switch_music_suggestion_desc_placeholder">Suggest opening music app when headphones connected. Tap to select app</string>
+    <string name="default_music_app">org.lineageos.twelve</string>
+    <string name="useful_summary">Moon Suggestions</string>
+    <string name="useful_title">Convenience Features</string>
+    <string name="switch_delivery_title">Delivery Suggestion</string>
+    <string name="switch_delivery_desc">Suggest jumping to tracking page when copying tracking number (Supports SF Express, ZTO, YTO, J&T)</string>
+    <string name="main_ps">We do not upload any of your data. All matching is processed locally</string>
+</resources>
