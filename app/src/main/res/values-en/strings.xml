@@ -21,6 +21,6 @@
     <string name="useful_summary">Moon Suggestions</string>
     <string name="useful_title">Convenience Features</string>
     <string name="switch_delivery_title">Delivery Suggestion</string>
-    <string name="switch_delivery_desc">Suggest jumping to tracking page when copying tracking number (Supports SF Express, ZTO, YTO, J&T)</string>
+    <string name="switch_delivery_desc">Suggest jumping to tracking page when copying tracking number (Supports SF Express, ZTO, YTO, J&amp;T)</string>
     <string name="main_ps">We do not upload any of your data. All matching is processed locally</string>
 </resources>
