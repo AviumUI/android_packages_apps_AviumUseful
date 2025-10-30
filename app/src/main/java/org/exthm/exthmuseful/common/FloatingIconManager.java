@@ -30,10 +30,13 @@ public class FloatingIconManager {
     private FloatingIconClickListener clickListener;
     private int iconResourceId;
     private float initialTouchX_swipe;
+    private float initialTouchY_swipe;
     private static final int CLICK_THRESHOLD_DP = 10;
-    private static final int SWIPE_LEFT_DISMISS_THRESHOLD_DP = 50;
+    private static final int SWIPE_RIGHT_DISMISS_THRESHOLD_DP = 50;
+    private static final int SWIPE_UP_DISMISS_THRESHOLD_DP = 50;
     private int clickThresholdPx;
-    private int swipeLeftDismissThresholdPx;
+    private int swipeRightDismissThresholdPx;
+    private int swipeUpDismissThresholdPx;
 
     private static final long ANIMATION_DURATION = 150; // 动画时长 (毫秒)，尽量短
 
@@ -43,7 +46,8 @@ public class FloatingIconManager {
         this.iconResourceId = iconResourceId;
         this.clickListener = listener;
         this.clickThresholdPx = dpToPx(CLICK_THRESHOLD_DP);
-        this.swipeLeftDismissThresholdPx = dpToPx(SWIPE_LEFT_DISMISS_THRESHOLD_DP);
+        this.swipeRightDismissThresholdPx = dpToPx(SWIPE_RIGHT_DISMISS_THRESHOLD_DP);
+        this.swipeUpDismissThresholdPx = dpToPx(SWIPE_UP_DISMISS_THRESHOLD_DP);
 
         createFloatingViewInternal();
     }
@@ -80,18 +84,23 @@ public class FloatingIconManager {
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     initialTouchX_swipe = event.getRawX();
+                    initialTouchY_swipe = event.getRawY();
                     return true;
 
                 case MotionEvent.ACTION_UP:
                     float finalTouchX = event.getRawX();
+                    float finalTouchY = event.getRawY();
                     float deltaX = finalTouchX - initialTouchX_swipe;
+                    float deltaY = finalTouchY - initialTouchY_swipe;
 
-                    if (Math.abs(deltaX) < clickThresholdPx) {
+                    if (Math.abs(deltaX) < clickThresholdPx && Math.abs(deltaY) < clickThresholdPx) {
                         if (clickListener != null) {
                             clickListener.onIconClick();
                         }
-                    } else if (deltaX < -swipeLeftDismissThresholdPx) {
-                        hide(); // hide 方法现在会处理动画
+                    } else if (deltaX > swipeRightDismissThresholdPx) {
+                        hide();
+                    } else if (deltaY < -swipeUpDismissThresholdPx) {
+                        hide();
                     }
                     return true;
             }

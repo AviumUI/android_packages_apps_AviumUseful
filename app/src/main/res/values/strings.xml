@@ -12,7 +12,7 @@
     <string name="switch_url_suggestion_desc">复制链接时，建议打开对应应用（支持淘宝，百度网盘,123云盘）注⚠️：非联网功能</string>
     <string name="switch_url_share_title">快捷打开网址</string>
     <string name="switch_url_share_desc">复制链接时，若无匹配对应应用，建议使用浏览器打开</string>
-    <string name="main_hint">往左滑浮动图标可取消本次建议</string>
+    <string name="main_hint">往右滑浮动图标可取消本次建议</string>
     <string name="dialog_select_music_app_title">选择音乐应用</string>
     <string name="dialog_no_apps_found">未找到可启动的应用</string>
     <string name="desc_selected_app">已选择</string>

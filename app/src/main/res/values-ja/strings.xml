@@ -12,7 +12,7 @@
     <string name="switch_url_suggestion_desc">リンクをコピー時、対応アプリを起動するよう提案します（淘宝、百度网盤、123雲盤対応）※オフライン機能</string>
     <string name="switch_url_share_title">URLクイック起動</string>
     <string name="switch_url_share_desc">リンクをコピー時、対応アプリがない場合はブラウザで開くよう提案します</string>
-    <string name="main_hint">フロートアイコンを左へスワイプでサジェストをキャンセル</string>
+    <string name="main_hint">フロートアイコンを右へスワイプでサジェストをキャンセル</string>
     <string name="dialog_select_music_app_title">音楽アプリ選択</string>
     <string name="dialog_no_apps_found">起動可能なアプリが見つかりません</string>
     <string name="desc_selected_app">選択済み</string>

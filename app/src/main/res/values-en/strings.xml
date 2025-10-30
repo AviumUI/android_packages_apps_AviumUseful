@@ -12,7 +12,7 @@
     <string name="switch_url_suggestion_desc">Suggest opening corresponding app when copying links (Supports Taobao, Baidu Netdisk, 123 Cloud) Note: Offline function</string>
     <string name="switch_url_share_title">Quick URL Opening</string>
     <string name="switch_url_share_desc">Suggest opening in browser if no matching app found for copied link</string>
-    <string name="main_hint">Swipe floating icon left to cancel suggestion</string>
+    <string name="main_hint">Swipe floating icon right to cancel suggestion</string>
     <string name="dialog_select_music_app_title">Select Music App</string>
     <string name="dialog_no_apps_found">No launchable apps found</string>
     <string name="desc_selected_app">Selected</string>

@@ -12,7 +12,7 @@
     <string name="switch_url_suggestion_desc">複製連結時，建議開啟對應應用程式（支援淘寶、百度網盤、123雲端）</string>
     <string name="switch_url_share_title">快速開啟網址</string>
     <string name="switch_url_share_desc">複製連結時，若無匹配應用程式，建議使用瀏覽器開啟</string>
-    <string name="main_hint">向左滑動浮動圖示可取消本次建議</string>
+    <string name="main_hint">向右滑動浮動圖示可取消本次建議</string>
     <string name="dialog_select_music_app_title">選擇音樂應用程式</string>
     <string name="dialog_no_apps_found">未找到可啟動的應用程式</string>
     <string name="desc_selected_app">已選擇</string>
