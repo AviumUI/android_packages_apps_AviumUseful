@@ -1,31 +1,45 @@
 # Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Keep all attributes needed by R8
+-keepattributes *Annotation*
+-keepattributes InnerClasses
+-keepattributes EnclosingMethod
+-keepattributes Signature
+-keepattributes Exceptions
+-keepattributes SourceFile
+-keepattributes LineNumberTable
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
-
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
-
-# Jetpack Compose
+# Jetpack Compose - Extended rules
+-dontwarn androidx.compose.**
 -keep class androidx.compose.** { *; }
 -keep interface androidx.compose.** { *; }
 -keep @androidx.compose.ui.tooling.preview.Preview class * { *; }
 -keep class * implements androidx.compose.runtime.MonotonicFrameClock
+-keepclassmembers class androidx.compose.** { *; }
+
+# Compose Runtime
+-keep class androidx.compose.runtime.** { *; }
+-keepclassmembers class androidx.compose.runtime.** { *; }
 
 # Kotlin
 -keep class kotlin.** { *; }
--keep class kotlinx.** { *; }
+-keepclassmembers class **$WhenMappings { <fields>; }
+-keepclassmembers class kotlin.Metadata { *; }
+-dontwarn kotlin.**
+
+# Kotlin Coroutines
+-keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
+-keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
+-keepclassmembers class kotlinx.coroutines.** { volatile <fields>; }
+
+# AndroidX
+-keep class androidx.activity.** { *; }
+-keep class androidx.preference.** { *; }
+-dontwarn androidx.**
+
+# Keep app classes
+-keep class org.exthm.exthmuseful.** { *; }
+-keepclassmembers class org.exthm.exthmuseful.** { *; }
+
+# R8 compatibility
+-allowaccessmodification
