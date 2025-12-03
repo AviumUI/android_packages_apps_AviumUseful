@@ -88,35 +88,35 @@
 
         <service
             android:name=".service.screen.ScreenUsefulService"
-            android:foregroundServiceType="dataSync"
+            android:foregroundServiceType="specialUse"
             android:enabled="true"
             android:exported="false"
             tools:ignore="Instantiatable" />
 
         <service
             android:name=".service.torch.TorchService"
-            android:foregroundServiceType="dataSync"
+            android:foregroundServiceType="specialUse"
             android:enabled="true"
             android:exported="false"
             tools:ignore="Instantiatable" />
 
         <service
             android:name=".service.music.MusicSuggestionService"
-            android:foregroundServiceType="dataSync"
+            android:foregroundServiceType="specialUse"
             android:enabled="true"
             android:exported="false"
             tools:ignore="Instantiatable" />
 
         <service
             android:name=".service.url.ClipboardService"
-            android:foregroundServiceType="dataSync"
+            android:foregroundServiceType="specialUse"
             android:enabled="true"
             android:exported="false"
             tools:ignore="Instantiatable" />
 
         <service
             android:name=".service.delivery.DeliveryService"
-            android:foregroundServiceType="dataSync"
+            android:foregroundServiceType="specialUse"
             android:enabled="true"
             android:exported="false"
             tools:ignore="Instantiatable" />

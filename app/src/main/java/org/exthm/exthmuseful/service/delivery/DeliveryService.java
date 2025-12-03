@@ -29,6 +29,7 @@ import android.app.Service;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ServiceInfo;
 import android.net.Uri;
 import android.os.IBinder;
 import android.provider.Settings;
@@ -72,7 +73,7 @@ public class DeliveryService extends Service implements
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Notification notification = buildForegroundNotification();
-        startForeground(NOTIFICATION_ID, notification);
+        startForeground(NOTIFICATION_ID, notification,ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
 
         if (clipboardListener != null) {
             clipboardListener.startListening();

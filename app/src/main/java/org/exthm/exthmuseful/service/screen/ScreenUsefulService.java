@@ -34,6 +34,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.PowerManager;
+import android.content.pm.ServiceInfo;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
@@ -104,7 +105,8 @@ public class ScreenUsefulService extends Service implements FloatingIconClickLis
 
         registerReceivers();
         try {
-            startForeground(NOTIFICATION_ID, createNotification());
+            startForeground(NOTIFICATION_ID, createNotification(),
+            ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
         } catch (Exception e) {
             stopSelf();
         }

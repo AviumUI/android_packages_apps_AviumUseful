@@ -71,7 +71,7 @@ public class MusicSuggestionService extends Service implements HeadsetStateListe
         createNotificationChannel();
         Notification notification = createNotification();
         int fgsType = 0;
-        fgsType = ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC;
+        fgsType = ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE;
         try {
             startForeground(NOTIFICATION_ID, notification, fgsType);
         } catch (Exception e) {
