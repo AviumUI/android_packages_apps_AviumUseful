@@ -1,26 +1,26 @@
 <resources>
-    <string name="app_name">便利建议</string>
-
-    <string name="title_name">便利功能</string>
-    <string name="switch_screen_always_on_title">临时屏幕常亮</string>
-    <string name="switch_screen_always_on_desc">点击半暗的屏幕时，保持屏幕常亮直到手动熄屏</string>
-    <string name="switch_torch_suggestion_title">手电筒建议</string>
-    <string name="switch_torch_suggestion_desc">手电筒开启后，建议关闭</string>
-    <string name="switch_music_suggestion_title">打开音乐应用建议</string>
-    <string name="switch_music_suggestion_desc">连接耳机时，建议打开音乐应用</string>
-    <string name="switch_url_suggestion_title">打开链接应用</string>
-    <string name="switch_url_suggestion_desc">复制链接时，建议打开对应应用（支持淘宝，百度网盘,123云盘）注⚠️：非联网功能</string>
-    <string name="switch_url_share_title">快捷打开网址</string>
-    <string name="switch_url_share_desc">复制链接时，若无匹配对应应用，建议使用浏览器打开</string>
-    <string name="main_hint">往右滑浮动图标可取消本次建议</string>
-    <string name="dialog_select_music_app_title">选择音乐应用</string>
-    <string name="dialog_no_apps_found">未找到可启动的应用</string>
-    <string name="desc_selected_app">已选择</string>
-    <string name="switch_music_suggestion_desc_placeholder">连接耳机时，建议打开音乐应用,点击选择音乐应用</string>
+    <string name="app_name">Moon Suggestions</string>
+    
+    <string name="title_name">Moon Features</string>
+    <string name="switch_screen_always_on_title">Temporary Screen Always-On</string>
+    <string name="switch_screen_always_on_desc">Keep screen on until manually turned off when tapping dimmed screen</string>
+    <string name="switch_torch_suggestion_title">Flashlight Suggestion</string>
+    <string name="switch_torch_suggestion_desc">Suggest turning off flashlight after activation</string>
+    <string name="switch_music_suggestion_title">Music App Suggestion</string>
+    <string name="switch_music_suggestion_desc">Suggest opening music app when headphones are connected</string>
+    <string name="switch_url_suggestion_title">Open Link in App</string>
+    <string name="switch_url_suggestion_desc">Suggest opening corresponding app when copying links (Supports Taobao, Baidu Netdisk, 123 Cloud) Note: Offline function</string>
+    <string name="switch_url_share_title">Quick URL Opening</string>
+    <string name="switch_url_share_desc">Suggest opening in browser if no matching app found for copied link</string>
+    <string name="main_hint">Swipe floating icon right to cancel suggestion</string>
+    <string name="dialog_select_music_app_title">Select Music App</string>
+    <string name="dialog_no_apps_found">No launchable apps found</string>
+    <string name="desc_selected_app">Selected</string>
+    <string name="switch_music_suggestion_desc_placeholder">Suggest opening music app when headphones connected. Tap to select app</string>
     <string name="default_music_app">org.lineageos.twelve</string>
-    <string name="useful_summary">提供贴心的小功能建议</string>
-    <string name="useful_title">便利功能</string>
-    <string name="switch_delivery_title">快递建议</string>
-    <string name="switch_delivery_desc">当复制快递单号时，建议跳转到查询界面(支持顺丰，中通，圆通，极兔)</string>
-    <string name="main_ps">我们不会上传您的任何数据，所有匹配均在本地处理</string>
+    <string name="useful_summary">Moon Suggestions</string>
+    <string name="useful_title">Convenience Features</string>
+    <string name="switch_delivery_title">Delivery Suggestion</string>
+    <string name="switch_delivery_desc">Suggest jumping to tracking page when copying tracking number (Supports SF Express, ZTO, YTO, J&amp;T)</string>
+    <string name="main_ps">We do not upload any of your data. All matching is processed locally</string>
 </resources>
