@@ -26,6 +26,9 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.PixelFormat;
+import android.os.Build;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -60,10 +63,14 @@ public class FloatingIconManager {
     private int swipeUpDismissThresholdPx;
 
     private static final long ANIMATION_DURATION = 150; // 动画时长 (毫秒)，尽量短
+    private static final long VIBRATION_DURATION = 10;
+
+    private Vibrator vibrator;
 
     public FloatingIconManager(Context context, int iconResourceId, FloatingIconClickListener listener) {
         this.context = context.getApplicationContext();
         this.windowManager = (WindowManager) this.context.getSystemService(Context.WINDOW_SERVICE);
+        this.vibrator = (Vibrator) this.context.getSystemService(Context.VIBRATOR_SERVICE);
         this.iconResourceId = iconResourceId;
         this.clickListener = listener;
         this.clickThresholdPx = dpToPx(CLICK_THRESHOLD_DP);
@@ -73,6 +80,16 @@ public class FloatingIconManager {
         createFloatingViewInternal();
     }
 
+    private void doVibrate() {
+        if (vibrator != null && vibrator.hasVibrator()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createOneShot(VIBRATION_DURATION, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+                vibrator.vibrate(VIBRATION_DURATION);
+            }
+        }
+    }
+
     private int dpToPx(int dp) {
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         return Math.round(dp * (metrics.densityDpi / (float) DisplayMetrics.DENSITY_DEFAULT));
@@ -80,7 +97,6 @@ public class FloatingIconManager {
 
     @SuppressLint("ClickableViewAccessibility")
     private void createFloatingViewInternal() {
-        // ... (创建 FrameLayout, ImageView 的代码保持不变) ...
         FrameLayout container = new FrameLayout(context);
         FrameLayout.LayoutParams containerParams = new FrameLayout.LayoutParams(
                 dpToPx(48),
@@ -106,6 +122,7 @@ public class FloatingIconManager {
                 case MotionEvent.ACTION_DOWN:
                     initialTouchX_swipe = event.getRawX();
                     initialTouchY_swipe = event.getRawY();
+                    doVibrate(); 
                     return true;
 
                 case MotionEvent.ACTION_UP:
@@ -119,8 +136,10 @@ public class FloatingIconManager {
                             clickListener.onIconClick();
                         }
                     } else if (deltaX > swipeRightDismissThresholdPx) {
+                        doVibrate(); 
                         hide();
                     } else if (deltaY < -swipeUpDismissThresholdPx) {
+                        doVibrate(); 
                         hide();
                     }
                     return true;
