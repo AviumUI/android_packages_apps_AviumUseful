@@ -25,13 +25,15 @@ import androidx.annotation.Nullable;
 
 public class AppMatchResult {
     private final String packageName;
-    private final int iconResId; // 推荐的图标资源 ID 
+    private final int iconResId; // 推荐的图标资源 ID
     private final String matchedUrl; // 匹配到的具体 URL，用于打开应用时传递
+    private final boolean isWebUrl; // 网页URL
 
-    public AppMatchResult(String packageName, int iconResId, @Nullable String matchedUrl) {
+    public AppMatchResult(String packageName, int iconResId, @Nullable String matchedUrl, boolean isWebUrl) {
         this.packageName = packageName;
         this.iconResId = iconResId;
         this.matchedUrl = matchedUrl;
+        this.isWebUrl = isWebUrl;
     }
 
     public String getPackageName() {
@@ -47,7 +49,14 @@ public class AppMatchResult {
         return matchedUrl;
     }
 
+    public boolean isWebUrl() {
+        return isWebUrl;
+    }
+
     public static final String PACKAGE_TAOBAO = "com.taobao.taobao";
     public static final String PACKAGE_BAIDU_NETDISK = "com.baidu.netdisk";
     public static final String PACKAGE_123YUNPAN = "com.mfcloudcalculate.networkdisk";
+    public static final String PACKAGE_BILIBILI = "tv.danmaku.bili";
+    public static final String PACKAGE_DOUYIN = "com.ss.android.ugc.aweme";
+    public static final String PACKAGE_WEB = "web"; 
 }

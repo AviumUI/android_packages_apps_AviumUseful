@@ -61,6 +61,11 @@ public class DistinguishApp {
             Pattern.CASE_INSENSITIVE
     );
 
+    private static final Pattern GENERIC_URL_PATTERN = Pattern.compile(
+            "https?://[^\\s\"<>{}|\\^`\\[\\]]+",
+            Pattern.CASE_INSENSITIVE
+    );
+
     @Nullable
     public static AppMatchResult distinguish(String text) {
         if (text == null || text.isEmpty()) {
@@ -73,19 +78,39 @@ public class DistinguishApp {
         // 淘宝匹配
         matcher = TAOBAO_PATTERN.matcher(text);
         if (matcher.find()) {
-            return new AppMatchResult(AppMatchResult.PACKAGE_TAOBAO, R.drawable.icon_taobao, matcher.group(0)); 
+            return new AppMatchResult(AppMatchResult.PACKAGE_TAOBAO, R.drawable.icon_taobao, matcher.group(0), false);
         }
 
         // 百度网盘匹配
         matcher = BAIDU_NETDISK_PATTERN.matcher(text);
         if (matcher.find()) {
-            return new AppMatchResult(AppMatchResult.PACKAGE_BAIDU_NETDISK, R.drawable.icon_baidu_netdisk, matcher.group(0));
+            return new AppMatchResult(AppMatchResult.PACKAGE_BAIDU_NETDISK, R.drawable.icon_baidu_netdisk, matcher.group(0), false);
         }
 
         // 123云盘匹配
         matcher = ONETWOTHREE_YUNPAN_PATTERN.matcher(text);
         if (matcher.find()) {
-            return new AppMatchResult(AppMatchResult.PACKAGE_123YUNPAN, R.drawable.icon_pandownload, matcher.group(0));
+            return new AppMatchResult(AppMatchResult.PACKAGE_123YUNPAN, R.drawable.icon_pandownload, matcher.group(0), false);
+        }
+
+        // 哔哩哔哩匹配
+        matcher = BILIBILI_PATTERN.matcher(text);
+        if (matcher.find()) {
+            return new AppMatchResult(AppMatchResult.PACKAGE_BILIBILI, R.drawable.icon_box, matcher.group(0), false);
+        }
+
+        // 抖音匹配
+        matcher = DOUYIN_PATTERN.matcher(text);
+        if (matcher.find()) {
+            return new AppMatchResult(AppMatchResult.PACKAGE_DOUYIN, R.drawable.douyin, matcher.group(0), false);
+        }
+
+        // 通用URL匹配
+        matcher = GENERIC_URL_PATTERN.matcher(text);
+        if (matcher.find()) {
+            String url = matcher.group(0);
+            Log.d(TAG, "匹配到通用URL: " + url);
+            return new AppMatchResult(AppMatchResult.PACKAGE_WEB, R.drawable.icon_web, url, true);
         }
 
         Log.d(TAG, "未匹配");
