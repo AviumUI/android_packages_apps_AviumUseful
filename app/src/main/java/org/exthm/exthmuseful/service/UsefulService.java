@@ -41,6 +41,7 @@ import androidx.annotation.Nullable;
 import org.exthm.exthmuseful.R;
 import org.exthm.exthmuseful.service.music.MusicSuggestionService;
 import org.exthm.exthmuseful.service.screen.ScreenUsefulService;
+import org.exthm.exthmuseful.service.sms.VerificationCodeReceiver;
 import org.exthm.exthmuseful.service.torch.TorchService;
 import org.exthm.exthmuseful.service.url.ClipboardService;
 import org.exthm.exthmuseful.service.delivery.DeliveryService;
@@ -52,6 +53,8 @@ public class UsefulService extends Service {
     private static final int NOTIFICATION_ID = 1;
 
     private SharedPreferences.OnSharedPreferenceChangeListener preferenceChangeListener;
+    private VerificationCodeReceiver smsCodeReceiver;
+    private boolean isSmsCodeReceiverRegistered = false;
 
     @SuppressLint("ForegroundServiceType")
     @Override
@@ -99,7 +102,8 @@ public class UsefulService extends Service {
                 "torch_suggestion".equals(key)||
                 "music_suggestion".equals(key) ||
                 "url_suggestion".equals(key)||
-                "delivery_suggestion".equals(key)
+                "delivery_suggestion".equals(key) ||
+                "sms_code_suggestion".equals(key)
             ) {
                 new Handler(Looper.getMainLooper()).post(this::checkAndStartSubServices);
             }
@@ -185,7 +189,43 @@ public class UsefulService extends Service {
             }
         }
 
+        boolean isSmsCodeSuggestion = sharedPref.getBoolean("sms_code_suggestion", false);
+        if (isSmsCodeSuggestion) {
+            registerSmsCodeReceiver();
+        } else {
+            unregisterSmsCodeReceiver();
+        }
+
         scheduleSelfCheck();
+    }
+
+    private void registerSmsCodeReceiver() {
+        if (isSmsCodeReceiverRegistered) {
+            return;
+        }
+        try {
+            if (smsCodeReceiver == null) {
+                smsCodeReceiver = new VerificationCodeReceiver();
+            }
+            android.content.IntentFilter filter = new android.content.IntentFilter();
+            filter.addAction(VerificationCodeReceiver.ACTION_CODE_RECEIVED);
+            registerReceiver(smsCodeReceiver, filter);
+            isSmsCodeReceiverRegistered = true;
+        } catch (Exception e) {
+            //ntd
+        }
+    }
+
+    private void unregisterSmsCodeReceiver() {
+        if (!isSmsCodeReceiverRegistered || smsCodeReceiver == null) {
+            return;
+        }
+        try {
+            unregisterReceiver(smsCodeReceiver);
+            isSmsCodeReceiverRegistered = false;
+        } catch (Exception e) {
+            //ntd
+        }
     }
 
     private void scheduleSelfCheck() {
@@ -201,6 +241,8 @@ public class UsefulService extends Service {
             sharedPref.unregisterOnSharedPreferenceChangeListener(preferenceChangeListener);
             preferenceChangeListener = null;
         }
+
+        unregisterSmsCodeReceiver();
 
         Intent restartIntent = new Intent(this, UsefulService.class);
         startService(restartIntent);
