@@ -129,18 +129,34 @@ public class ClipboardService extends Service implements ClipboardListener.OnCli
         cancelAutoHideTimer();
 
         if (currentAppMatch != null && !TextUtils.isEmpty(currentAppMatch.getPackageName())) {
-            PackageManager pm = getPackageManager();
-            Intent launchIntent = pm.getLaunchIntentForPackage(currentAppMatch.getPackageName());
-
-            if (launchIntent != null) {
-                launchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            if (currentAppMatch.isWebUrl() && !TextUtils.isEmpty(currentAppMatch.getMatchedUrl())) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setData(android.net.Uri.parse(currentAppMatch.getMatchedUrl()));
+                browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 try {
-                    startActivity(launchIntent);
+                    PackageManager pm = getPackageManager();
+                    if (browserIntent.resolveActivity(pm) != null) {
+                        Intent chooser = Intent.createChooser(browserIntent, getString(R.string.open_url_with));
+                        chooser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(chooser);
+                    } 
                 } catch (Exception e) {
-                    Log.e(TAG, "启动应用 " + currentAppMatch.getPackageName() + " 失败: " + e.getMessage());
+                    e.printStackTrace();
                 }
             } else {
-                Log.w(TAG, "无法获取应用 " + currentAppMatch.getPackageName() + " 的启动 Intent。");
+                PackageManager pm = getPackageManager();
+                Intent launchIntent = pm.getLaunchIntentForPackage(currentAppMatch.getPackageName());
+
+                if (launchIntent != null) {
+                    launchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    try {
+                        startActivity(launchIntent);
+                    } catch (Exception e) {
+                        Log.e(TAG, "启动应用 " + currentAppMatch.getPackageName() + " 失败: " + e.getMessage());
+                    }
+                } else {
+                    Log.w(TAG, "无法获取应用 " + currentAppMatch.getPackageName() + " 的启动 Intent。");
+                }
             }
         }
 

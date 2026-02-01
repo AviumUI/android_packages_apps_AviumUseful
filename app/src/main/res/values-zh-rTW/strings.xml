@@ -23,4 +23,5 @@
     <string name="switch_delivery_title">快遞建議</string>
     <string name="switch_delivery_desc">當複製快遞單號時，建議跳轉至查詢頁面（支援順豐、中通、圓通、極兔）</string>
     <string name="main_ps">我們不會上傳您的任何數據，所有匹配均在本地端處理</string>
+    <string name="open_url_with">開啟方式</string>
 </resources>

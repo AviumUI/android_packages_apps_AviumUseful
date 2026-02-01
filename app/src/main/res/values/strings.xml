@@ -23,4 +23,5 @@
     <string name="switch_delivery_title">Delivery Suggestion</string>
     <string name="switch_delivery_desc">Suggest jumping to tracking page when copying tracking number (Supports SF Express, ZTO, YTO, J&amp;T)</string>
     <string name="main_ps">We do not upload any of your data. All matching is processed locally</string>
+    <string name="open_url_with">Open with</string>
 </resources>

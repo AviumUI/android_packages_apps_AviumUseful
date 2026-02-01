@@ -23,4 +23,5 @@
     <string name="switch_delivery_title">配送状況サジェスト</string>
     <string name="switch_delivery_desc">配送追跡番号をコピー時、追跡ページへ遷移するよう提案します（順豊、中通、円通、J&amp;T対応）</string>
     <string name="main_ps">お客様のデータは一切アップロードされません。全ての処理は端末内で完結します</string>
+    <string name="open_url_with">開くアプリを選択</string>
 </resources>
