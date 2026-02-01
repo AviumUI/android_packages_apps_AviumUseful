@@ -23,5 +23,9 @@
     <string name="switch_delivery_title">Delivery Suggestion</string>
     <string name="switch_delivery_desc">Suggest jumping to tracking page when copying tracking number (Supports SF Express, ZTO, YTO, J&amp;T)</string>
     <string name="main_ps">We do not upload any of your data. All matching is processed locally</string>
+    <string name="switch_sms_code_title">SMS Code Extraction</string>
+    <string name="switch_sms_code_desc">When receiving SMS verification code, copy code to clipboard</string>
+    <string name="sms_code_channel_name">SMS Verification Code</string>
+    <string name="sms_code_notification_title">SMS verification code received</string>
     <string name="open_url_with">Open with</string>
 </resources>

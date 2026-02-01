@@ -23,5 +23,9 @@
     <string name="switch_delivery_title">配送状況サジェスト</string>
     <string name="switch_delivery_desc">配送追跡番号をコピー時、追跡ページへ遷移するよう提案します（順豊、中通、円通、J&amp;T対応）</string>
     <string name="main_ps">お客様のデータは一切アップロードされません。全ての処理は端末内で完結します</string>
+    <string name="switch_sms_code_title">SMS認証コード抽出</string>
+    <string name="switch_sms_code_desc">SMS認証コード受信時,タップでクリップボードにコピー</string>
+    <string name="sms_code_channel_name">SMS認証コード</string>
+    <string name="sms_code_notification_title">SMS認証コードを受信しました</string>
     <string name="open_url_with">開くアプリを選択</string>
 </resources>
