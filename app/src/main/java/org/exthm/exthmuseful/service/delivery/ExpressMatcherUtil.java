@@ -21,33 +21,55 @@
 
 package org.exthm.exthmuseful.service.delivery;
 
+import android.util.Log;
 import androidx.annotation.Nullable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ExpressMatcherUtil {
+    private static final String TAG = "ExpressMatcherUtil";
 
-    // 正则
-    // 顺丰: SF 开头
-    // 中通: 7 开头
-    // 圆通: YT 开头
-    // 极兔: JT 开头
-    private static final Pattern EXPRESS_TRACKING_PATTERN =
-            Pattern.compile("^(SF\\d{13}|7\\d{13}|YT\\d{13}|JT\\d{13})$");
-
+    /**
+     * 匹配快递单号
+     * @param text 输入文本
+     * @return 匹配到的快递单号，未匹配返回null
+     */
     @Nullable
     public static String getMatchedExpressNumber(@Nullable String text) {
         if (text == null) {
             return null;
         }
-        String trimmedText = text.trim(); // 去除前后空格
+        String trimmedText = text.trim();
         if (trimmedText.isEmpty()) {
             return null;
         }
 
-        Matcher matcher = EXPRESS_TRACKING_PATTERN.matcher(trimmedText);
-        if (matcher.matches()) {
-            return trimmedText; // 返回匹配到的完整单号
+        for (ExpressMatchRules.ExpressRule rule : ExpressMatchRules.RULES) {
+            Pattern pattern = Pattern.compile(rule.getPattern());
+            Matcher matcher = pattern.matcher(trimmedText);
+            if (matcher.matches()) {
+                return trimmedText;
+            }
+        }
+        return null;
+    }
+
+    @Nullable
+    public static ExpressMatchRules.ExpressRule getMatchedExpressRule(@Nullable String text) {
+        if (text == null) {
+            return null;
+        }
+        String trimmedText = text.trim();
+        if (trimmedText.isEmpty()) {
+            return null;
+        }
+
+        for (ExpressMatchRules.ExpressRule rule : ExpressMatchRules.RULES) {
+            Pattern pattern = Pattern.compile(rule.getPattern());
+            Matcher matcher = pattern.matcher(trimmedText);
+            if (matcher.matches()) {
+                return rule;
+            }
         }
         return null;
     }
