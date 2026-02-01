@@ -54,6 +54,7 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
 
     var isScreenOn by remember { mutableStateOf(sharedPref.getBoolean("screen_always_on", false)) }
     var isTorchSuggestion by remember { mutableStateOf(sharedPref.getBoolean("torch_suggestion", false)) }
+    var isSmsCodeSuggestion by remember { mutableStateOf(sharedPref.getBoolean("sms_code_suggestion", false)) }
 
     var isurlSuggestion by remember { mutableStateOf(sharedPref.getBoolean("url_suggestion", false)) }
     var isurlShareSuggestion by remember { mutableStateOf(sharedPref.getBoolean("url_share_suggestion", false)) }
@@ -129,6 +130,21 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
                     val newCheckedState = !isTorchSuggestion
                     isTorchSuggestion = newCheckedState
                     sharedPref.edit().putBoolean("torch_suggestion", newCheckedState).apply()
+                }
+            )
+
+            SettingItem(
+                title = stringResource(R.string.switch_sms_code_title),
+                description = stringResource(R.string.switch_sms_code_desc),
+                isChecked = isSmsCodeSuggestion,
+                onCheckedChange = { newState ->
+                    isSmsCodeSuggestion = newState
+                    sharedPref.edit().putBoolean("sms_code_suggestion", newState).apply()
+                },
+                onClick = {
+                    val newCheckedState = !isSmsCodeSuggestion
+                    isSmsCodeSuggestion = newCheckedState
+                    sharedPref.edit().putBoolean("sms_code_suggestion", newCheckedState).apply()
                 }
             )
 

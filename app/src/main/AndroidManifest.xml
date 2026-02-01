@@ -120,6 +120,23 @@
             android:enabled="true"
             android:exported="false"
             tools:ignore="Instantiatable" />
+
+        <receiver
+            android:name=".service.sms.VerificationCodeReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="org.avium.action.VERIFICATION_CODE_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".service.sms.VerificationCodeService"
+            android:foregroundServiceType="specialUse"
+            android:enabled="true"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
     </application>
 
 </manifest>

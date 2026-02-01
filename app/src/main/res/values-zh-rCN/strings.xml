@@ -23,4 +23,8 @@
     <string name="switch_delivery_title">快递建议</string>
     <string name="switch_delivery_desc">当复制快递单号时，建议跳转到查询界面(支持顺丰，中通，圆通，极兔)</string>
     <string name="main_ps">我们不会上传您的任何数据，所有匹配均在本地处理</string>
+    <string name="switch_sms_code_title">短信验证码提取</string>
+    <string name="switch_sms_code_desc">收到短信验证码时,点击后将验证码复制到剪贴板</string>
+    <string name="sms_code_channel_name">短信验证码</string>
+    <string name="sms_code_notification_title">收到短信验证码</string>
 </resources>

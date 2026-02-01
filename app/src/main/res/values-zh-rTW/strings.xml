@@ -23,4 +23,8 @@
     <string name="switch_delivery_title">快遞建議</string>
     <string name="switch_delivery_desc">當複製快遞單號時，建議跳轉至查詢頁面（支援順豐、中通、圓通、極兔）</string>
     <string name="main_ps">我們不會上傳您的任何數據，所有匹配均在本地端處理</string>
+    <string name="switch_sms_code_title">簡訊驗證碼提取</string>
+    <string name="switch_sms_code_desc">收到簡訊驗證碼時,點擊後將驗證碼複製到剪貼簿</string>
+    <string name="sms_code_channel_name">簡訊驗證碼</string>
+    <string name="sms_code_notification_title">收到簡訊驗證碼</string>
 </resources>
