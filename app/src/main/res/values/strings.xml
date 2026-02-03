@@ -1,3 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2025-2026 The AviumUI Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <resources>
     <string name="app_name">Moon Suggestions</string>
     
@@ -9,7 +25,7 @@
     <string name="switch_music_suggestion_title">Music App Suggestion</string>
     <string name="switch_music_suggestion_desc">Suggest opening music app when headphones are connected</string>
     <string name="switch_url_suggestion_title">Open Link in App</string>
-    <string name="switch_url_suggestion_desc">Suggest opening corresponding app when copying links (Supports Taobao, Baidu Netdisk, 123 Cloud) Note: Offline function</string>
+    <string name="switch_url_suggestion_desc">Suggest opening corresponding app when copying links (Supports Taobao, Baidu Netdisk, 123 Cloud)</string>
     <string name="switch_url_share_title">Quick URL Opening</string>
     <string name="switch_url_share_desc">Suggest opening in browser if no matching app found for copied link</string>
     <string name="main_hint">Swipe floating icon right to cancel suggestion</string>
@@ -28,4 +44,7 @@
     <string name="sms_code_channel_name">SMS Verification Code</string>
     <string name="sms_code_notification_title">SMS verification code received</string>
     <string name="open_url_with">Open with</string>
+    <string name="switch_music_suggestion_summary_on">Open %1$s when connected to ears</string>
+    <string name="switch_music_suggestion_summary_off">Disabled</string>
+    <string name="category_function">Useful functions settings</string>
 </resources>

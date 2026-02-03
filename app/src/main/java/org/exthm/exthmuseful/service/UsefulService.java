@@ -1,22 +1,17 @@
 /*
- *
- * Copyright (C) 2025 The AviumUI Project
- *
+ * Copyright (C) 2025-2026 The AviumUI Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 package org.exthm.exthmuseful.service;
@@ -34,6 +29,7 @@ import android.content.pm.ServiceInfo;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
@@ -49,6 +45,8 @@ import org.exthm.exthmuseful.service.delivery.DeliveryService;
 public class UsefulService extends Service {
     private static final String TAG = "UsefulService";
     private static final String PREFS_NAME = "app_settings";
+    private static final String KEY_MUSIC_SWITCH = "music_suggestion_switch";
+    private static final String KEY_MUSIC_PACKAGE = "music_app_package_name";
     private static final String CHANNEL_ID = "UsefulServiceChannel";
     private static final int NOTIFICATION_ID = 1;
 
@@ -95,7 +93,7 @@ public class UsefulService extends Service {
 
     private void registerPreferenceChangeListener() {
         if (preferenceChangeListener != null) return;
-//在这里添加sharpperference监听
+        //在这里添加sharpperference监听
         SharedPreferences sharedPref = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         preferenceChangeListener = (sharedPreferences, key) -> {
             if ("screen_always_on".equals(key) ||
@@ -123,7 +121,7 @@ public class UsefulService extends Service {
 
     private void checkAndStartSubServices() {
         SharedPreferences sharedPref = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-//在这里拉起服务
+        //在这里拉起服务
         boolean isScreenOn = sharedPref.getBoolean("screen_always_on", false);
         if (isScreenOn) {
             if (!isServiceRunning(ScreenUsefulService.class)) {
@@ -150,16 +148,17 @@ public class UsefulService extends Service {
             }
         }
 
-        boolean isMusicSuggestion = sharedPref.getBoolean("music_suggestion", false);
-        if (isMusicSuggestion) {
+        boolean isMusicSwitchOn = sharedPref.getBoolean(KEY_MUSIC_SWITCH, false);
+        // Get music app package.
+        // If not specified, use R.string.default_music_app.
+        String musicPackage = sharedPref.getString(KEY_MUSIC_PACKAGE, getString(R.string.default_music_app));
+        if (isMusicSwitchOn && !TextUtils.isEmpty(musicPackage)) {
             if (!isServiceRunning(MusicSuggestionService.class)) {
                 startService(new Intent(this, MusicSuggestionService.class));
-                Log.d(TAG, "启动音乐建议服务");
             }
         } else {
             if (isServiceRunning(MusicSuggestionService.class)) {
                 stopService(new Intent(this, MusicSuggestionService.class));
-                Log.d(TAG, "停止音乐建议服务");
             }
         }
 

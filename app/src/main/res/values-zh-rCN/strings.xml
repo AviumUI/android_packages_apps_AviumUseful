@@ -1,3 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2025-2026 The AviumUI Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <resources>
     <string name="app_name">便利建议</string>
 
@@ -9,7 +25,7 @@
     <string name="switch_music_suggestion_title">打开音乐应用建议</string>
     <string name="switch_music_suggestion_desc">连接耳机时，建议打开音乐应用</string>
     <string name="switch_url_suggestion_title">打开链接应用</string>
-    <string name="switch_url_suggestion_desc">复制链接时，建议打开对应应用（支持淘宝，百度网盘,123云盘）注⚠️：非联网功能</string>
+    <string name="switch_url_suggestion_desc">复制链接时，建议打开对应应用（支持淘宝，百度网盘,123云盘）</string>
     <string name="switch_url_share_title">快捷打开网址</string>
     <string name="switch_url_share_desc">复制链接时，若无匹配对应应用，建议使用浏览器打开</string>
     <string name="main_hint">往右滑浮动图标可取消本次建议</string>
@@ -28,4 +44,7 @@
     <string name="sms_code_channel_name">短信验证码</string>
     <string name="sms_code_notification_title">收到短信验证码</string>
     <string name="open_url_with">打开方式</string>
+    <string name="switch_music_suggestion_summary_on">当连接到耳机时建议打开 %1$s</string>
+    <string name="switch_music_suggestion_summary_off">关闭建议</string>
+    <string name="category_function">便利建议选项</string>
 </resources>
