@@ -1,22 +1,17 @@
 /*
- *
- * Copyright (C) 2025 The AviumUI Project
- *
+ * Copyright (C) 2025-2026 The AviumUI Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 package org.exthm.exthmuseful.service.torch;
@@ -36,12 +31,12 @@ import androidx.core.content.ContextCompat;
 public class TorchDetector {
     private static final String TAG = "TorchDetector";
 
-    private Context context;
+    private final Context context;
     private CameraManager cameraManager;
     private String cameraId;
     private CameraManager.TorchCallback torchCallback;
-    private Handler handler;
-    private TorchStateListener listener;
+    private final Handler handler;
+    private final TorchStateListener listener;
     private boolean isDetecting = false;
 
     public TorchDetector(Context context, TorchStateListener listener) {
