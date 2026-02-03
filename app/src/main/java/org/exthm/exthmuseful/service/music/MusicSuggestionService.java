@@ -1,22 +1,17 @@
 /*
- *
- * Copyright (C) 2025 The AviumUI Project
- *
+ * Copyright (C) 2025-2026 The AviumUI Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 package org.exthm.exthmuseful.service.music;
@@ -37,21 +32,19 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import org.exthm.exthmuseful.MainActivity;
+import org.exthm.exthmuseful.UsefulSettingsActivity;
 import org.exthm.exthmuseful.R;
 import org.exthm.exthmuseful.common.FloatingIconClickListener;
 import org.exthm.exthmuseful.common.FloatingIconManager;
 
 public class MusicSuggestionService extends Service implements HeadsetStateListener, FloatingIconClickListener {
 
-    private static final String defaultMusicApp = String.valueOf(R.string.default_music_app);
-
     private static final String TAG = "MusicSuggestionService";
     private EarConnectListener earConnectListener;
     private FloatingIconManager floatingIconManager;
 
     private static final String PREFS_NAME = "app_settings";
-    private static final String KEY_MUSIC_APP_PACKAGE = "music_app_suggestion";
+    private static final String KEY_MUSIC_APP_PACKAGE = "music_app_package_name";
 
     private static final String CHANNEL_ID = "MusicSuggestionChannel";
     private static final int NOTIFICATION_ID = 4;
@@ -91,11 +84,9 @@ public class MusicSuggestionService extends Service implements HeadsetStateListe
     public void onHeadsetConnected(String deviceName, boolean isBluetooth) {
         if (floatingIconManager != null) {
             SharedPreferences appSharedPref = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-            String musicAppPackage = appSharedPref.getString(KEY_MUSIC_APP_PACKAGE, null);
+            String musicAppPackage = appSharedPref.getString(KEY_MUSIC_APP_PACKAGE, getString(R.string.default_music_app));
             if (!TextUtils.isEmpty(musicAppPackage)) {
                 floatingIconManager.show();
-            } else {
-                musicAppPackage = defaultMusicApp;
             }
         }
     }
@@ -109,7 +100,7 @@ public class MusicSuggestionService extends Service implements HeadsetStateListe
     @Override
     public void onIconClick() {
         SharedPreferences sharedPref = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        String musicAppPackage = sharedPref.getString(KEY_MUSIC_APP_PACKAGE, null);
+        String musicAppPackage = sharedPref.getString(KEY_MUSIC_APP_PACKAGE, getString(R.string.default_music_app));
 
         if (!TextUtils.isEmpty(musicAppPackage)) {
             PackageManager pm = getPackageManager();
@@ -144,7 +135,7 @@ public class MusicSuggestionService extends Service implements HeadsetStateListe
     }
 
     private Notification createNotification() {
-        Intent notificationIntent = new Intent(this, MainActivity.class);
+        Intent notificationIntent = new Intent(this, UsefulSettingsActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent,
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
 

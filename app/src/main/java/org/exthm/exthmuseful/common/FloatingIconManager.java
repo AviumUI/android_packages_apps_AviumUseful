@@ -1,22 +1,17 @@
 /*
- *
- * Copyright (C) 2025 The AviumUI Project
- *
+ * Copyright (C) 2025-2026 The AviumUI Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 package org.exthm.exthmuseful.common;
@@ -52,20 +47,20 @@ public class FloatingIconManager {
     private boolean isViewAdded = false;
     private boolean isAnimating = false; // 防止动画期间重复操作
     private FloatingIconClickListener clickListener;
-    private int iconResourceId;
+    private final int iconResourceId;
     private float initialTouchX_swipe;
     private float initialTouchY_swipe;
     private static final int CLICK_THRESHOLD_DP = 10;
     private static final int SWIPE_RIGHT_DISMISS_THRESHOLD_DP = 50;
     private static final int SWIPE_UP_DISMISS_THRESHOLD_DP = 50;
-    private int clickThresholdPx;
-    private int swipeRightDismissThresholdPx;
-    private int swipeUpDismissThresholdPx;
+    private final int clickThresholdPx;
+    private final int swipeRightDismissThresholdPx;
+    private final int swipeUpDismissThresholdPx;
 
     private static final long ANIMATION_DURATION = 150; // 动画时长 (毫秒)，尽量短
     private static final long VIBRATION_DURATION = 10;
 
-    private Vibrator vibrator;
+    private final Vibrator vibrator;
 
     public FloatingIconManager(Context context, int iconResourceId, FloatingIconClickListener listener) {
         this.context = context.getApplicationContext();

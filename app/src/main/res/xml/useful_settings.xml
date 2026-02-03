@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2025-2026 The AviumUI Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/app_name">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="header_view"
+        android:layout="@layout/settings_header"
+        android:selectable="false" />
+
+    <PreferenceCategory android:title="@string/category_function">
+
+        <SwitchPreferenceCompat
+            android:key="screen_always_on"
+            android:title="@string/switch_screen_always_on_title"
+            android:summary="@string/switch_screen_always_on_desc"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="torch_suggestion"
+            android:title="@string/switch_torch_suggestion_title"
+            android:summary="@string/switch_torch_suggestion_desc"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="sms_code_suggestion"
+            android:title="@string/switch_sms_code_title"
+            android:summary="@string/switch_sms_code_desc"
+            android:defaultValue="false" />
+
+        <com.android.settingslib.PrimarySwitchPreference
+            android:key="music_suggestion_switch"
+            android:title="@string/switch_music_suggestion_title"
+            android:summary="@string/switch_music_suggestion_summary_off"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="url_suggestion"
+            android:title="@string/switch_url_suggestion_title"
+            android:summary="@string/switch_url_suggestion_desc"
+            android:defaultValue="false" />
+        
+        <SwitchPreferenceCompat
+            android:key="url_share_suggestion"
+            android:title="@string/switch_url_share_title"
+            android:summary="@string/switch_url_share_desc"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="delivery_suggestion"
+            android:title="@string/switch_delivery_title"
+            android:summary="@string/switch_delivery_desc"
+            android:defaultValue="false" />
+	
+    </PreferenceCategory>
+</androidx.preference.PreferenceScreen>
