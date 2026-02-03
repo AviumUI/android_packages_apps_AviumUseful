@@ -39,15 +39,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ExthmUseful">
+        android:theme="@style/Theme.SubSettingsBase">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".UsefulSettingsActivity"
             android:exported="true"
-            android:label="@string/app_name" 
-            android:theme="@style/Theme.ExthmUseful">
+            android:label="@string/app_name" >
     
-			 <intent-filter >
+            <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
             <meta-data

@@ -38,7 +38,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import org.exthm.exthmuseful.MainActivity;
+import org.exthm.exthmuseful.UsefulSettingsActivity;
 import org.exthm.exthmuseful.R;
 import org.exthm.exthmuseful.common.FloatingIconClickListener;
 import org.exthm.exthmuseful.common.FloatingIconManager;
@@ -160,7 +160,7 @@ public class VerificationCodeService extends Service implements FloatingIconClic
     }
 
     private Notification createNotification(String contentText) {
-        Intent notificationIntent = new Intent(this, MainActivity.class);
+        Intent notificationIntent = new Intent(this, UsefulSettingsActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent,
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
 

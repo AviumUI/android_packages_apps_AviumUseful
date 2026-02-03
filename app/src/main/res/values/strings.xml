@@ -28,4 +28,8 @@
     <string name="sms_code_channel_name">SMS Verification Code</string>
     <string name="sms_code_notification_title">SMS verification code received</string>
     <string name="open_url_with">Open with</string>
+    <!-- TODO: Make these english-->
+    <string name="switch_music_suggestion_summary_on">Open %1$s when connected to ears</string>
+    <string name="switch_music_suggestion_summary_off">Disabled</string>
+    <string name="category_function">ExthmUseful</string>
 </resources>
