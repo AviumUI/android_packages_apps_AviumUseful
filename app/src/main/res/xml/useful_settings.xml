@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/app_name">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="header_view"
+        android:layout="@layout/settings_header"
+        android:selectable="false" />
+
+    <PreferenceCategory android:title="@string/category_function">
+
+        <SwitchPreferenceCompat
+            android:key="screen_always_on"
+            android:title="@string/switch_screen_always_on_title"
+            android:summary="@string/switch_screen_always_on_desc"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="torch_suggestion"
+            android:title="@string/switch_torch_suggestion_title"
+            android:summary="@string/switch_torch_suggestion_desc"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="sms_code_suggestion"
+            android:title="@string/switch_sms_code_title"
+            android:summary="@string/switch_sms_code_desc"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="music_app_suggestion"
+            android:title="@string/switch_music_suggestion_title"
+            android:summary="%s"
+            android:persistent="true" />
+
+        <SwitchPreferenceCompat
+            android:key="url_suggestion"
+            android:title="@string/switch_url_suggestion_title"
+            android:summary="@string/switch_url_suggestion_desc"
+            android:defaultValue="false" />
+        
+        <SwitchPreferenceCompat
+            android:key="url_share_suggestion"
+            android:title="@string/switch_url_share_title"
+            android:summary="@string/switch_url_share_desc"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="delivery_suggestion"
+            android:title="@string/switch_delivery_title"
+            android:summary="@string/switch_delivery_desc"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+</androidx.preference.PreferenceScreen>

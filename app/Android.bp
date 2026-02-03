@@ -13,14 +13,9 @@ android_app {
 
     static_libs: [
         "kotlin-stdlib",
+        "androidx.core_core",
         "androidx.preference_preference",
         "SettingsLib",
-        "androidx.compose.runtime_runtime",
-        "androidx.compose.foundation_foundation",
-        "androidx.compose.material_material",
-        "androidx.compose.ui_ui",
-        "androidx.compose.material3_material3",
-        "androidx.activity_activity-compose",
     ],
 
     optimize: {

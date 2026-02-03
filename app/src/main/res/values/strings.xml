@@ -23,4 +23,10 @@
     <string name="switch_delivery_title">Delivery Suggestion</string>
     <string name="switch_delivery_desc">Suggest jumping to tracking page when copying tracking number (Supports SF Express, ZTO, YTO, J&amp;T)</string>
     <string name="main_ps">We do not upload any of your data. All matching is processed locally</string>
+    <!-- TODO: Make these english-->
+    <string name="switch_music_suggestion_summary_on">连接耳机时打开: %1$s</string>
+    <string name="switch_music_suggestion_summary_off">未启用</string>
+    <string name="switch_sms_code_title">switch_sms_code_title</string>
+    <string name="switch_sms_code_desc">switch_sms_code_desc</string>
+    <string name="category_function">功能开关</string>
 </resources>
