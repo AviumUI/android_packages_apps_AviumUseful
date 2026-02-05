@@ -1,5 +1,5 @@
 android_app {
-    name: "ExthmUseful",
+    name: "AviumUseful",
 
     srcs: ["src/**/*.java", "src/**/*.kt"],
     resource_dirs: ["src/main/res"],
@@ -9,7 +9,7 @@ android_app {
     system_ext_specific: true,
     certificate: "platform",
     privileged: true,
-    required: ["privapp_whitelist_org.exthm.exthmuseful"],
+    required: ["privapp_whitelist_org.avium.aviumuseful"],
 
     static_libs: [
         "kotlin-stdlib",
@@ -27,9 +27,9 @@ android_app {
 }
 
 prebuilt_etc {
-    name: "privapp_whitelist_org.exthm.exthmuseful",
+    name: "privapp_whitelist_org.avium.aviumuseful",
     system_ext_specific: true,
     sub_dir: "permissions",
-    src: "privapp_whitelist_org.exthm.exthmuseful.xml",
+    src: "privapp_whitelist_org.avium.aviumuseful.xml",
     filename_from_src: true,
 }
