@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "org.exthm.exthmuseful"
+    namespace = "org.avium.aviumuseful"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "org.exthm.exthmuseful"
+        applicationId = "org.avium.aviumuseful"
         minSdk = 35
         targetSdk = 35
         versionCode = 1

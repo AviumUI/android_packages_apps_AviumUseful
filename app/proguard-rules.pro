@@ -38,8 +38,8 @@
 -dontwarn androidx.**
 
 # Keep app classes
--keep class org.exthm.exthmuseful.** { *; }
--keepclassmembers class org.exthm.exthmuseful.** { *; }
+-keep class org.avium.aviumuseful.** { *; }
+-keepclassmembers class org.avium.aviumuseful.** { *; }
 
 # R8 compatibility
 -allowaccessmodification
