@@ -130,7 +130,7 @@ public class FloatingIconManager {
                         if (clickListener != null) {
                             clickListener.onIconClick();
                         }
-                    } else if (deltaX > swipeRightDismissThresholdPx) {
+                    } else if (Math.abs(deltaX) > swipeRightDismissThresholdPx) {
                         doVibrate(); 
                         hide();
                     } else if (deltaY < -swipeUpDismissThresholdPx) {
