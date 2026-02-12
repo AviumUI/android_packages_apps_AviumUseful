@@ -68,4 +68,8 @@
             android:defaultValue="false" />
 	
     </PreferenceCategory>
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="privacy_notice"
+        android:title="@string/privacy_notice" />
 </androidx.preference.PreferenceScreen>
