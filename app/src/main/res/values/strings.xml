@@ -47,4 +47,5 @@
     <string name="switch_music_suggestion_summary_on">Open %1$s when connected to ears</string>
     <string name="switch_music_suggestion_summary_off">Disabled</string>
     <string name="category_function">Useful functions settings</string>
+    <string name="privacy_notice">We do not upload any of your data. All processing is done locally</string>
 </resources>
