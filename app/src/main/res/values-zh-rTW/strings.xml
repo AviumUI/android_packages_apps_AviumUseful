@@ -44,4 +44,5 @@
     <string name="sms_code_channel_name">簡訊驗證碼</string>
     <string name="sms_code_notification_title">收到簡訊驗證碼</string>
     <string name="open_url_with">開啟方式</string>
+    <string name="privacy_notice">我們不會上傳您的任何數據，所有處理均在本地端完成</string>
 </resources>

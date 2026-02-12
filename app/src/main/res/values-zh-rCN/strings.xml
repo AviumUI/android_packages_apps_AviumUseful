@@ -25,20 +25,20 @@
     <string name="switch_music_suggestion_title">打开音乐应用建议</string>
     <string name="switch_music_suggestion_desc">连接耳机时，建议打开音乐应用</string>
     <string name="switch_url_suggestion_title">打开链接应用</string>
-    <string name="switch_url_suggestion_desc">复制链接时，建议打开对应应用（支持淘宝，百度网盘,123云盘）</string>
+    <string name="switch_url_suggestion_desc">复制链接时，建议打开对应应用（支持淘宝、百度网盘、123云盘）</string>
     <string name="switch_url_share_title">快捷打开网址</string>
     <string name="switch_url_share_desc">复制链接时，若无匹配对应应用，建议使用浏览器打开</string>
-    <string name="main_hint">往右滑浮动图标可取消本次建议</string>
+    <string name="main_hint">点击以接受本次建议，左右滑动取消</string>
     <string name="dialog_select_music_app_title">选择音乐应用</string>
     <string name="dialog_no_apps_found">未找到可启动的应用</string>
     <string name="desc_selected_app">已选择</string>
     <string name="switch_music_suggestion_desc_placeholder">连接耳机时，建议打开音乐应用,点击选择音乐应用</string>
     <string name="default_music_app">org.lineageos.twelve</string>
-    <string name="useful_summary">提供贴心的小功能建议</string>
+    <string name="useful_summary">提供贴心的小建议</string>
     <string name="useful_title">便利功能</string>
     <string name="switch_delivery_title">快递建议</string>
-    <string name="switch_delivery_desc">当复制快递单号时，建议跳转到查询界面(支持顺丰，中通，圆通，极兔)</string>
-    <string name="main_ps">我们不会上传您的任何数据，所有匹配均在本地处理</string>
+    <string name="switch_delivery_desc">当复制快递单号时，建议跳转到查询界面（支持顺丰、中通、圆通、极兔）</string>
+    <string name="main_ps">根据上下文场景创建悬浮快捷提示</string>
     <string name="switch_sms_code_title">短信验证码提取</string>
     <string name="switch_sms_code_desc">收到短信验证码时,点击后将验证码复制到剪贴板</string>
     <string name="sms_code_channel_name">短信验证码</string>
@@ -47,4 +47,5 @@
     <string name="switch_music_suggestion_summary_on">当连接到耳机时建议打开 %1$s</string>
     <string name="switch_music_suggestion_summary_off">关闭建议</string>
     <string name="category_function">便利建议选项</string>
+    <string name="privacy_notice">我们不会上传您的任何数据，所有处理均在本地完成</string>
 </resources>
