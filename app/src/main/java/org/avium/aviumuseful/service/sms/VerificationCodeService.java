@@ -52,6 +52,7 @@ public class VerificationCodeService extends Service implements FloatingIconClic
 
     private Handler autoHideHandler;
     private Runnable autoHideRunnable;
+    private Context context;
 
     @Override
     public void onCreate() {
@@ -124,6 +125,7 @@ public class VerificationCodeService extends Service implements FloatingIconClic
                 Log.d(TAG, "Verification code copied to clipboard: " + currentCode);
             }
         }
+        setSmsLiveNotifsView(context);
 
         if (floatingIconManager != null) {
             floatingIconManager.hide();
@@ -133,6 +135,15 @@ public class VerificationCodeService extends Service implements FloatingIconClic
 
         currentCode = null;
         stopSelf();
+    }
+
+    private void setSmsLiveNotifsView(Context context){
+        Intent intent = new Intent();
+        intent.setAction("org.avium.systemui.chips.action.SHOW_CHIP");
+        intent.putExtra("type",2);
+        intent.putExtra("text",currentCode);
+        intent.putExtra("duration_ms",200000);
+        context.sendBroadcast(intent);
     }
 
     private void startAutoHideTimer() {
