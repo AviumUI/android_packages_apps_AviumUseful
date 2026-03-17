@@ -122,6 +122,47 @@ public class UrlMatchRules {
             "https?://(?:y\\.qq\\.com|c\\.y\\.qq\\.com)[^\\s\"]*",
             "QQ音乐链接"
         ),
+
+        // 闲鱼
+        new AppUrlRule(
+            "com.taobao.idlefish", 
+            R.drawable.icon_idlefish, 
+            "(https?://(?:[\\w-]+\\.)?(?:goofish\\.com|idlefish\\.com)[^\\s\\ ]*)|(m\\.tb\\.cn/h\\.[\\w-]+)|(fu\uD83D\uDE4B\u200D♂️[a-zA-Z0-9]{8,15}口|淘\uD83D\uDE4B\u200D♂️[a-zA-Z0-9]{8,15}吧)", 
+            "闲鱼商品链接或闲口令"
+        ),
+
+        // 支付宝
+        new AppUrlRule(
+            "com.eg.android.AlipayGphone", 
+            R.drawable.icon_alipay, 
+            "(https?://(?:[\\w-]+\\.)?alipay(?:objects)?\\.com/(?:_|[\\w-?=&/])+)|(#[a-zA-Z0-9]{10,25}#)|([a-zA-Z0-9]{8,15}\\s+http:/\\s+W:/F\\s+[a-zA-Z0-9]+\\s+\\$\\d+)|(打开支付宝.*搜索\\s*(\\d{7,10}))", 
+            "支付宝红包、好友、转账或小程序口令"
+        ),
+
+        // 钉钉
+        new AppUrlRule(
+            "com.alibaba.android.rimet",
+            R.drawable.icon_dingtalk, // 请确保你有对应的图标资源
+            "(https?://(?:[\\w-]+\\.)?(?:dingtalk\\.com|dg\\.alipay\\.com)[^\\s\"]*)|(\\$[a-zA-Z0-9]{8,15}\\$)|(dtk:\\/\\/dingtalkweb\\/business\\/.*)",
+            "钉钉链接或服务口令"
+        ),
+
+        // 夸克
+        new AppUrlRule(
+            "com.quark.browser", 
+            R.drawable.icon_quark, 
+            "https?://pan\\.quark\\.cn/s/[\\w-]+", 
+            "夸克网盘分享链接"
+        ),
+
+        // 飞书
+        new AppUrlRule(
+            "com.ss.android.lark", 
+            R.drawable.icon_feishu, 
+            "https?://(?:[\\w-]+\\.)?(?:feishu\\.cn|larksuite\\.com)/(?:docx|docx|base|wiki|file)/[\\w-]+", 
+            "飞书文档或多维表格链接"
+        ),
+
     };
 
     /**
