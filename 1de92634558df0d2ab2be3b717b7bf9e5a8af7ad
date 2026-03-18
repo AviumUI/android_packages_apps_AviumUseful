@@ -16,6 +16,24 @@
       "message": "@chenguanyusb@outlook.com Have you tested all of them?",
       "revId": "1de92634558df0d2ab2be3b717b7bf9e5a8af7ad",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18e3c8f8_b6e0b96d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000019
+      },
+      "writtenOn": "2026-03-18T04:00:29Z",
+      "side": 1,
+      "message": "yes, alipay(zhikouling and miniapps share link),lark,quark netdisk,dingtalk and idlefish are tested.",
+      "parentUuid": "ddab811e_5e0f3e23",
+      "revId": "1de92634558df0d2ab2be3b717b7bf9e5a8af7ad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
