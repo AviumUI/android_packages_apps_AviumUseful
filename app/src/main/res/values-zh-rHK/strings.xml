@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2025-2026 The AviumUI Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">便利建議</string>
+    <string name="title_name">便利功能</string>
+    <string name="switch_screen_always_on_title">臨時螢幕常亮</string>
+    <string name="switch_screen_always_on_desc">點按半暗的螢幕時，保持螢幕常亮直到手動熄屏</string>
+    <string name="switch_torch_suggestion_title">手電筒建議</string>
+    <string name="switch_torch_suggestion_desc">手電筒開啟後，建議關閉</string>
+    <string name="switch_music_suggestion_title">開啟音樂應用建議</string>
+    <string name="switch_music_suggestion_desc">連接耳機時，建議開啟音樂應用</string>
+    <string name="switch_url_suggestion_title">開啟連結應用</string>
+    <string name="switch_url_suggestion_desc">複製連結時，建議開啟對應應用（支援淘寶、百度網盤、123雲盤）</string>
+    <string name="switch_url_share_title">快速開啟網址</string>
+    <string name="switch_url_share_desc">複製連結時，若無對應應用可匹配，建議使用瀏覽器開啟</string>
+    <string name="main_ps">點按以接受本次建議，左右滑動可取消</string>
+    <string name="dialog_select_music_app_title">選擇音樂應用</string>
+    <string name="dialog_no_apps_found">未找到可啟動的應用</string>
+    <string name="desc_selected_app">已選擇</string>
+    <string name="switch_music_suggestion_desc_placeholder">連接耳機時，建議開啟音樂應用，點按以選擇音樂應用</string>
+    <string name="default_music_app">org.lineageos.twelve</string>
+    <string name="useful_summary">提供貼心的小建議</string>
+    <string name="useful_title">便利功能</string>
+    <string name="switch_delivery_title">快遞建議</string>
+    <string name="switch_delivery_desc">當複製快遞單號時，建議跳轉到查詢介面（支援順豐、中通、圓通、極兔）</string>
+    <string name="main_hint">根據上下文場景建立懸浮快捷提示</string>
+    <string name="switch_sms_code_title">短訊驗證碼提取</string>
+    <string name="switch_sms_code_desc">收到短訊驗證碼時，點按後會將驗證碼複製到剪貼簿</string>
+    <string name="sms_code_channel_name">短訊驗證碼</string>
+    <string name="sms_code_notification_title">收到短訊驗證碼</string>
+    <string name="open_url_with">開啟方式</string>
+    <string name="switch_music_suggestion_summary_on">當連接耳機時，建議開啟 %1$s</string>
+    <string name="switch_music_suggestion_summary_off">關閉建議</string>
+    <string name="category_function">便利建議選項</string>
+    <string name="privacy_notice">我們不會上傳你的任何資料，所有處理均在本機完成</string>
+</resources>
