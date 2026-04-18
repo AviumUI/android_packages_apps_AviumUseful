@@ -2,8 +2,8 @@ android_app {
     name: "AviumUseful",
 
     srcs: ["src/**/*.java", "src/**/*.kt"],
-    resource_dirs: ["src/main/res"],
-    manifest: "src/main/AndroidManifest.xml",
+    resource_dirs: ["res"],
+    manifest: "AndroidManifest.xml",
 
     platform_apis: true,
     system_ext_specific: true,
@@ -23,7 +23,6 @@ android_app {
         proguard_flags_files: ["proguard-rules.pro"],
         shrink_resources: true,
     },
-
 }
 
 prebuilt_etc {
