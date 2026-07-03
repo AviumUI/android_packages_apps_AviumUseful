@@ -18,6 +18,7 @@ package org.avium.aviumuseful.service.music;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothHeadset;
 import android.bluetooth.BluetoothProfile;
@@ -84,20 +85,31 @@ public class EarConnectListener {
                 int state = intent.getIntExtra(BluetoothProfile.EXTRA_STATE, BluetoothProfile.STATE_DISCONNECTED);
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 String deviceName = "蓝牙耳机";
+                boolean isMediaDevice = false;
                 if (device != null) {
                     try {
                         if (ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
                             deviceName = device.getName() != null ? device.getName() : "未知蓝牙设备";
+                            // Check if this device supports audio/media profiles (A2DP or HEADSET)
+                            // Watches and other non-media devices will not match these profiles
+                            if (device.getBluetoothClass() != null) {
+                                isMediaDevice = device.getBluetoothClass().doesClassMatch(BluetoothClass.PROFILE_A2DP)
+                                        || device.getBluetoothClass().doesClassMatch(BluetoothClass.PROFILE_HEADSET);
+                            }
                         } else {
                             Log.w(TAG, "BLUETOOTH_CONNECT permission not granted for getting device name.");
                         }
                     } catch (SecurityException e) {
-                        Log.e(TAG, "SecurityException getting Bluetooth device name: " + e.getMessage());
+                        Log.e(TAG, "SecurityException getting Bluetooth device info: " + e.getMessage());
                     }
                 }
 
 
                 if (state == BluetoothProfile.STATE_CONNECTED) {
+                    if (!isMediaDevice) {
+                        Log.i(TAG, "Non-media Bluetooth device connected, skipping notification: " + deviceName);
+                        return;
+                    }
                     Log.i(TAG, "Bluetooth headset connected: " + deviceName);
                     if (listener != null) {
                         listener.onHeadsetConnected(deviceName, true);
